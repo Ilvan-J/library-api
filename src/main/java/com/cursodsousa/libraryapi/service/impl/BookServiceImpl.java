@@ -6,6 +6,8 @@ import com.cursodsousa.libraryapi.model.repository.BookRepository;
 import com.cursodsousa.libraryapi.service.BookService;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class BookServiceImpl implements BookService {
     private BookRepository respository;
@@ -20,5 +22,10 @@ public class BookServiceImpl implements BookService {
             throw new BusinessException("Isbn já cadastrado.");
         }
         return respository.save(book);
+    }
+
+    @Override
+    public Optional<Book> getById(Long id) {
+        return Optional.empty();
     }
 }
