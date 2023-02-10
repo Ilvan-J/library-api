@@ -58,7 +58,7 @@ public class BookServiceTest {
     }
 
     @Test
-    @DisplayName("Deve lançar erro de negocio ao tentar cadastrar um livro   com um isbn duplicado")
+    @DisplayName("Deve lançar erro de negocio ao tentar cadastrar um livro com um isbn duplicado")
     public void shouldNotSaveABookWithDuplicatedISBN() {
         //cenário
         Book book = createValidBook();
