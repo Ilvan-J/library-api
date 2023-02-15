@@ -6,6 +6,7 @@ import com.cursodsousa.libraryapi.model.entity.Loan;
 import com.cursodsousa.libraryapi.service.BookService;
 import com.cursodsousa.libraryapi.service.LoanService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -54,9 +55,8 @@ public class LoanControllerTest {
         BDDMockito.given( bookService.getBookByIsbn("123") ).willReturn(Optional.of(book) );
 
         Loan loan = Loan.builder().id(1l).customer("Fulano").book(book).loanDate(LocalDate.now()).build();
-//        BDDMockito.given( loanService.save(Mockito.any(Loan.class)) ).willReturn(loan);
-
         BDDMockito.given( loanService.save(Mockito.any(Loan.class)) ).willReturn(loan);
+
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders.post( LOAN_API )
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -66,5 +66,25 @@ public class LoanControllerTest {
                 .andExpect( status().isCreated() )
                 .andExpect( content().string("1"));
 
+    }
+
+    @Test
+    @DisplayName("Deve retornar erro ao tentar fazer empréstimo de um livro inexistente.")
+    public void invalidIsbnCreateLoanTest() throws Exception{
+
+        LoanDTO dto = LoanDTO.builder().isbn("123").customer("Fulano").build();
+        String json = new ObjectMapper().writeValueAsString(dto);
+        BDDMockito.given( bookService.getBookByIsbn("123") ).willReturn(Optional.empty() );
+
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.post( LOAN_API )
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(json);
+
+        mvc.perform( request )
+                .andExpect( status().isBadRequest() )
+                .andExpect( jsonPath("errors", Matchers.hasSize(1)))
+                .andExpect( jsonPath("errors[0]").value("Book not found for passed isbn"))
+        ;
     }
 }
