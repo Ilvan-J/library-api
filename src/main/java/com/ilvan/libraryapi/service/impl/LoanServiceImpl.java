@@ -4,7 +4,9 @@ import com.ilvan.libraryapi.exception.BusinessException;
 import com.ilvan.libraryapi.model.entity.Loan;
 import com.ilvan.libraryapi.model.repository.LoanRepository;
 import com.ilvan.libraryapi.service.LoanService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class LoanServiceImpl implements LoanService {
     private LoanRepository repository;
 

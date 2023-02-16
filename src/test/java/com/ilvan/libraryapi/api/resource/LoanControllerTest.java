@@ -1,6 +1,7 @@
 package com.ilvan.libraryapi.api.resource;
 
 import com.ilvan.libraryapi.api.dto.LoanDTO;
+import com.ilvan.libraryapi.api.dto.ReturnedLoanDTO;
 import com.ilvan.libraryapi.exception.BusinessException;
 import com.ilvan.libraryapi.model.entity.Book;
 import com.ilvan.libraryapi.model.entity.Loan;
@@ -27,6 +28,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(SpringExtension.class)
@@ -113,5 +115,21 @@ public class LoanControllerTest {
                 .andExpect( jsonPath("errors", Matchers.hasSize(1)))
                 .andExpect( jsonPath("errors[0]").value("Book already loaned"))
         ;
+    }
+
+    @Test
+    @DisplayName("Deve retornar um livro")
+    public void returneBookTest() throws Exception{
+        //cenário { returned: true }
+        ReturnedLoanDTO dto = ReturnedLoanDTO.builder().returned(true).build();
+
+        String json = new ObjectMapper().writeValueAsString(dto);
+
+        mvc.perform(
+                patch(LOAN_API.concat("/1"))
+                        .accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(json)
+        ).andExpect( status().isOk() );
     }
 }
