@@ -122,6 +122,9 @@ public class LoanControllerTest {
     public void returneBookTest() throws Exception{
         //cenário { returned: true }
         ReturnedLoanDTO dto = ReturnedLoanDTO.builder().returned(true).build();
+        Loan loan = Loan.builder().id(1l).build();
+        BDDMockito.given(loanService.getById(Mockito.anyLong()))
+                .willReturn(Optional.of(loan));
 
         String json = new ObjectMapper().writeValueAsString(dto);
 
@@ -131,5 +134,7 @@ public class LoanControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(json)
         ).andExpect( status().isOk() );
+
+        Mockito.verify(loanService, Mockito.times(1)).update(loan);
     }
 }

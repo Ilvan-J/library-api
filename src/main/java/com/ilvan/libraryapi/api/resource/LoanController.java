@@ -1,6 +1,7 @@
 package com.ilvan.libraryapi.api.resource;
 
 import com.ilvan.libraryapi.api.dto.LoanDTO;
+import com.ilvan.libraryapi.api.dto.ReturnedLoanDTO;
 import com.ilvan.libraryapi.model.entity.Book;
 import com.ilvan.libraryapi.model.entity.Loan;
 import com.ilvan.libraryapi.service.BookService;
@@ -37,5 +38,15 @@ public class LoanController {
         entity = service.save(entity);
 
         return entity.getId();
+    }
+
+
+    @PatchMapping("{id}")
+    public void returnBook(
+            @PathVariable Long id, @RequestBody ReturnedLoanDTO dto) {
+        Loan loan = service.getById(id).get();
+        loan.setReturned(dto.getReturned());
+
+        service.update(loan);
     }
 }
