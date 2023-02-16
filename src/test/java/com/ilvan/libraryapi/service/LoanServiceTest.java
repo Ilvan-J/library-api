@@ -116,6 +116,21 @@ public class LoanServiceTest {
 
     }
 
+    @Test
+    @DisplayName("Deve atualizar um empréstimo.")
+    public void updateLoanTest() {
+        Loan loan = createLoan();
+        loan.setId(1l);
+        loan.setReturned(true);
+
+        when( repository.save(loan) ).thenReturn(loan);
+
+        Loan updateLoan = service.update(loan);
+
+        assertThat(updateLoan.getReturned()).isTrue();
+        verify(repository).save(loan);
+    }
+
     public Loan createLoan() {
         Book book = Book.builder().id(1l).build();
         String customer = "Fulano";
