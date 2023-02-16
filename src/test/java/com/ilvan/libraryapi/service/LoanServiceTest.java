@@ -1,5 +1,6 @@
 package com.ilvan.libraryapi.service;
 
+import com.ilvan.libraryapi.exception.BusinessException;
 import com.ilvan.libraryapi.model.entity.Book;
 import com.ilvan.libraryapi.model.entity.Loan;
 import com.ilvan.libraryapi.model.repository.LoanRepository;
@@ -15,7 +16,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
+import static org.assertj.core.api.ThrowableAssert.catchThrowable;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
@@ -49,6 +51,7 @@ public class LoanServiceTest {
                 .book(book)
                 .build();
 
+        when(repository.existsByBookAndNotReturned(book)).thenReturn(false);
         when( repository.save(savingLoan) ).thenReturn(savedLoan);
 
         Loan loan = service.save(savingLoan);
@@ -57,5 +60,29 @@ public class LoanServiceTest {
         assertThat(loan.getBook().getId()).isEqualTo(savedLoan.getBook().getId());
         assertThat(loan.getCustomer()).isEqualTo(savedLoan.getCustomer());
         assertThat(loan.getLoanDate()).isEqualTo(savedLoan.getLoanDate());
+    }
+
+    @Test
+    @DisplayName("Deve lançar erro de negócio ao salvar um empréstimo com um livro já emprestado")
+    public void loanedBookSaveTest() {
+        Book book = Book.builder().id(1l).build();
+        String customer = "Fulano";
+
+        Loan savingLoan = Loan.builder()
+                .book(book)
+                .customer(customer)
+                .loanDate(LocalDate.now())
+                .build();
+
+        when(repository.existsByBookAndNotReturned(book)).thenReturn(true);
+
+        Throwable exception = catchThrowable(() -> service.save(savingLoan));
+
+        assertThat(exception)
+                .isInstanceOf(BusinessException.class)
+                .hasMessage("Book already loaned");
+
+        verify(repository, never()).save(savingLoan);
+
     }
 }
