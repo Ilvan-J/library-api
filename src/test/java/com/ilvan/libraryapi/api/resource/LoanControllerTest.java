@@ -60,10 +60,10 @@ public class LoanControllerTest {
         LoanDTO dto = LoanDTO.builder().isbn("123").customer("Fulano").build();
         String json = new ObjectMapper().writeValueAsString(dto);
 
-        Book book = Book.builder().id(1l).isbn("123").build();
+        Book book = Book.builder().id(1L).isbn("123").build();
         BDDMockito.given( bookService.getBookByIsbn("123") ).willReturn(Optional.of(book) );
 
-        Loan loan = Loan.builder().id(1l).customer("Fulano").book(book).loanDate(LocalDate.now()).build();
+        Loan loan = Loan.builder().id(1L).customer("Fulano").book(book).loanDate(LocalDate.now()).build();
         BDDMockito.given( loanService.save(Mockito.any(Loan.class)) ).willReturn(loan);
 
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders.post( LOAN_API )
@@ -105,7 +105,7 @@ public class LoanControllerTest {
         LoanDTO dto = LoanDTO.builder().isbn("123").customer("Fulano").build();
         String json = new ObjectMapper().writeValueAsString(dto);
 
-        Book book = Book.builder().id(1l).isbn("123").build();
+        Book book = Book.builder().id(1L).isbn("123").build();
         BDDMockito.given( bookService.getBookByIsbn("123") ).willReturn(Optional.of(book) );
 
         BDDMockito.given( loanService.save(Mockito.any(Loan.class)) )
@@ -128,7 +128,7 @@ public class LoanControllerTest {
     public void returneBookTest() throws Exception{
         //cenário { returned: true }
         ReturnedLoanDTO dto = ReturnedLoanDTO.builder().returned(true).build();
-        Loan loan = Loan.builder().id(1l).build();
+        Loan loan = Loan.builder().id(1L).build();
         BDDMockito.given(loanService.getById(Mockito.anyLong()))
                 .willReturn(Optional.of(loan));
 
@@ -163,7 +163,7 @@ public class LoanControllerTest {
 
     @Test
     @DisplayName("Deve filtrar empréstimos.")
-    public void findBooksTest() throws Exception{
+    public void findLoansTest() throws Exception{
         //cenário
         Long id = 1l;
 
@@ -175,7 +175,7 @@ public class LoanControllerTest {
         BDDMockito.given( loanService.find(Mockito.any(LoanFilterDTO.class), Mockito.any(Pageable.class)) )
                 .willReturn( new PageImpl<Loan>( Arrays.asList(loan), PageRequest.of(0, 10), 1));
 
-        String queryString = String.format("?isbn=%s&customer=%s&page=0&size=100",
+        String queryString = String.format("?isbn=%s&customer=%s&page=0&size=10",
                 book.getIsbn(), loan.getCustomer());
 
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
