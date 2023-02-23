@@ -7,6 +7,7 @@ import com.ilvan.libraryapi.exception.BusinessException;
 import com.ilvan.libraryapi.model.entity.Book;
 import com.ilvan.libraryapi.model.entity.Loan;
 import com.ilvan.libraryapi.service.BookService;
+import com.ilvan.libraryapi.service.EmailService;
 import com.ilvan.libraryapi.service.LoanService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ilvan.libraryapi.service.LoanServiceTest;
@@ -52,6 +53,9 @@ public class LoanControllerTest {
     private BookService bookService;
     @MockBean
     private LoanService loanService;
+
+    @MockBean
+    EmailService emailService;
 
     @Test
     @DisplayName("Deve realizar um empréstimo")

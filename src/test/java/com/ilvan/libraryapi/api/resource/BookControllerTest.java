@@ -5,6 +5,7 @@ import com.ilvan.libraryapi.exception.BusinessException;
 import com.ilvan.libraryapi.model.entity.Book;
 import com.ilvan.libraryapi.service.BookService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ilvan.libraryapi.service.EmailService;
 import com.ilvan.libraryapi.service.LoanService;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
@@ -50,6 +51,9 @@ public class BookControllerTest {
 
     @MockBean
     LoanService loanService;
+
+    @MockBean
+    EmailService emailService;
 
     @Test
     @DisplayName("Deve criar um livro com sucesso.")
