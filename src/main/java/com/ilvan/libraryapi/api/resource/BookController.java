@@ -11,6 +11,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -27,6 +29,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/books")
 @RequiredArgsConstructor
 @Api("Book API")
+@Slf4j
 public class BookController {
 
     private final BookService service;
@@ -41,6 +44,7 @@ public class BookController {
             @ApiResponse(code = 201, message = "Book succesfully created")
     )
     public BookDTO create(@RequestBody @Valid BookDTO dto) {
+        log.info(" creating a book for isbn: {} ", BookDTO.class);
         Book entity = modelMapper.map(dto, Book.class);
         entity = service.save(entity);
         return modelMapper.map(entity, BookDTO.class);
@@ -52,6 +56,7 @@ public class BookController {
             @ApiResponse(code = 404, message = "Book not found")
     )
     public BookDTO get(@PathVariable Long id) {
+        log.info(" obtaining details for book id: {} ", id);
         return service
                 .getById(id)
                 .map( book -> modelMapper.map(book, BookDTO.class) )
@@ -65,6 +70,7 @@ public class BookController {
             @ApiResponse(code = 204, message = "Book succesfully deleted")
     )
     public void delete(@PathVariable Long id) {
+        log.info(" deleting book of id: {} ", id);
         Book book = service.getById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND) );
         service.delete(book);
     }
@@ -75,6 +81,7 @@ public class BookController {
             @ApiResponse(code = 404, message = "Book not found")
     )
     public BookDTO update( @PathVariable Long id, BookDTO dto) {
+        log.info(" updating book of id: {} ", id);
        return service.getById(id).map( book -> {
 
            book.setAuthor(dto.getAuthor());
