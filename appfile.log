@@ -1,166 +1,453 @@
-2023-05-05 17:54:42.324  INFO 14640 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Starting LibraryApiApplication using Java 11.0.17 on LAPTOP-FMMS1NUN with PID 14640 (C:\projetos\library-api\target\classes started by ilvan in C:\projetos\library-api)
-2023-05-05 17:54:42.325  INFO 14640 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : No active profile set, falling back to default profiles: default
-2023-05-05 17:54:42.605  INFO 14640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-05-05 17:54:42.624  INFO 14640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
-2023-05-05 17:54:42.686  INFO 14640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-05-05 17:54:42.688  INFO 14640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-05-05 17:54:42.689  INFO 14640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2023-05-05 17:54:42.716  INFO 14640 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2023-05-05 17:54:42.716  INFO 14640 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 388 ms
-2023-05-05 17:54:42.733  INFO 14640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Starting...
-2023-05-05 17:54:42.735  INFO 14640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Start completed.
-2023-05-05 17:54:42.736  INFO 14640 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:416680cb-1e37-458e-b934-f89dab4cecba'
-2023-05-05 17:54:42.775  INFO 14640 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-05-05 17:54:42.780  INFO 14640 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-05-05 17:54:42.808  INFO 14640 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-05-05 17:54:42.809  INFO 14640 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-05-05 17:54:42.892  WARN 14640 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-05 17:54:42.927  INFO 14640 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-05-05 17:54:42.962  INFO 14640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-05-05 17:54:42.989  INFO 14640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-05-05 17:54:42.990  INFO 14640 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2023-05-05 17:54:42.991  INFO 14640 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-05-05 17:54:42.994  INFO 14640 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2023-05-05 17:54:43.015  INFO 14640 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_1
-2023-05-05 17:54:43.019  INFO 14640 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findUsingGET_1
-2023-05-05 17:54:43.026  INFO 14640 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Started LibraryApiApplication in 0.739 seconds (JVM running for 1400.641)
-2023-05-05 17:54:45.450  INFO 14640 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+2023-05-06 15:17:43.664  INFO 9152 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Starting LibraryApiApplication using Java 11.0.17 on LAPTOP-FMMS1NUN with PID 9152 (C:\projetos\library-api\target\classes started by ilvan in C:\projetos\library-api)
+2023-05-06 15:17:43.672  INFO 9152 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : No active profile set, falling back to default profiles: default
+2023-05-06 15:17:43.772  INFO 9152 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-06 15:17:43.773  INFO 9152 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-06 15:17:46.031  INFO 9152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-06 15:17:46.131  INFO 9152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 2 JPA repository interfaces.
+2023-05-06 15:17:47.435  INFO 9152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-06 15:17:47.458  INFO 9152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:17:47.459  INFO 9152 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-05-06 15:17:47.780  INFO 9152 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:17:47.781  INFO 9152 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4006 ms
+2023-05-06 15:17:47.972  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-06 15:17:48.333  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-06 15:17:48.344  INFO 9152 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:aa2789c9-1cce-4b6c-8d92-291562c0612d'
+2023-05-06 15:17:48.733  INFO 9152 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-06 15:17:48.888  INFO 9152 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-05-06 15:17:49.126  INFO 9152 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-06 15:17:49.404  INFO 9152 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-06 15:17:50.632  INFO 9152 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-06 15:17:50.655  INFO 9152 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:17:52.137  WARN 9152 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-06 15:17:52.450  INFO 9152 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2023-05-06 15:17:52.777  INFO 9152 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:17:53.062  INFO 9152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-06 15:17:53.064  INFO 9152 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-05-06 15:17:53.146  INFO 9152 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-05-06 15:17:53.165  INFO 9152 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-05-06 15:17:53.514  INFO 9152 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_1
+2023-05-06 15:17:53.526  INFO 9152 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findUsingGET_1
+2023-05-06 15:17:53.672  INFO 9152 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Started LibraryApiApplication in 10.676 seconds (JVM running for 11.377)
+2023-05-06 15:18:55.479  INFO 9152 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:18:55.480  INFO 9152 --- [Thread-4] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-05-06 15:18:55.728  WARN 9152 --- [Thread-4] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2023-05-06 15:18:55.736  INFO 9152 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-06 15:18:55.749  INFO 9152 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-06 15:21:02.904  INFO 9152 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Starting LibraryApiApplication using Java 11.0.17 on LAPTOP-FMMS1NUN with PID 9152 (C:\projetos\library-api\target\classes started by ilvan in C:\projetos\library-api)
+2023-05-06 15:21:02.932  INFO 9152 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : No active profile set, falling back to default profiles: default
+2023-05-06 15:21:03.436  INFO 9152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-06 15:21:03.445  INFO 9152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-05-06 15:21:03.642  INFO 9152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-06 15:21:03.646  INFO 9152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:21:03.650  INFO 9152 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-05-06 15:21:03.706  INFO 9152 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:21:03.717  INFO 9152 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 779 ms
+2023-05-06 15:21:03.782  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-05-06 15:21:03.790  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-05-06 15:21:03.793  INFO 9152 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:5bc66a99-a656-457d-9976-ab6cfc4bdefe'
+2023-05-06 15:21:03.891  INFO 9152 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-06 15:21:03.927  INFO 9152 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-06 15:21:03.953  INFO 9152 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-06 15:21:03.955  INFO 9152 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:21:03.961  WARN 9152 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'libraryApiApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+2023-05-06 15:21:03.964  INFO 9152 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:21:03.965  INFO 9152 --- [restartedMain] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-05-06 15:21:04.182  WARN 9152 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2023-05-06 15:21:04.184  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-05-06 15:21:04.188  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-05-06 15:21:04.190  INFO 9152 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:21:04.200  INFO 9152 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-06 15:21:04.207 ERROR 9152 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-==========================
-CONDITION EVALUATION DELTA
-==========================
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'libraryApiApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.8.jar:2.5.8]
+	at com.ilvan.libraryapi.LibraryApiApplication.main(LibraryApiApplication.java:36) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.8.jar:2.5.8]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:739) ~[spring-core-5.3.14.jar:5.3.14]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:671) ~[spring-core-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:407) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:388) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:335) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.3.14.jar:5.3.14]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Lcom/ilvan/libraryapi/service/EmailService;
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3061) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2248) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:734) ~[spring-core-5.3.14.jar:5.3.14]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ilvan.libraryapi.service.EmailService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 30 common frames omitted
 
+2023-05-06 15:22:41.877  INFO 9152 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Starting LibraryApiApplication using Java 11.0.17 on LAPTOP-FMMS1NUN with PID 9152 (C:\projetos\library-api\target\classes started by ilvan in C:\projetos\library-api)
+2023-05-06 15:22:41.879  INFO 9152 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : No active profile set, falling back to default profiles: default
+2023-05-06 15:22:42.200  INFO 9152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-06 15:22:42.201  INFO 9152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2023-05-06 15:22:42.289  INFO 9152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-06 15:22:42.291  INFO 9152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:22:42.291  INFO 9152 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-05-06 15:22:42.324  INFO 9152 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:22:42.325  INFO 9152 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 440 ms
+2023-05-06 15:22:42.348  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2023-05-06 15:22:42.352  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2023-05-06 15:22:42.353  INFO 9152 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:40f3a3c9-3db6-43cf-860d-163436aa7c08'
+2023-05-06 15:22:42.385  INFO 9152 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-06 15:22:42.391  INFO 9152 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-06 15:22:42.402  INFO 9152 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-06 15:22:42.404  INFO 9152 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:22:42.410  WARN 9152 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'libraryApiApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+2023-05-06 15:22:42.411  INFO 9152 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:22:42.412  INFO 9152 --- [restartedMain] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-05-06 15:22:42.628  WARN 9152 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2023-05-06 15:22:42.629  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2023-05-06 15:22:42.707  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2023-05-06 15:22:42.709  INFO 9152 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:22:42.713  INFO 9152 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
-Positive matches:
------------------
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-06 15:22:42.719 ERROR 9152 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-   LogFileWebEndpointAutoConfiguration#logFileWebEndpoint matched:
-      - Log File found logging.file.name appfile.log (LogFileWebEndpointAutoConfiguration.LogFileCondition)
-      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.logging.LogFileWebEndpoint; SearchStrategy: all) did not find any beans (OnBeanCondition)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'libraryApiApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.8.jar:2.5.8]
+	at com.ilvan.libraryapi.LibraryApiApplication.main(LibraryApiApplication.java:36) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.8.jar:2.5.8]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:739) ~[spring-core-5.3.14.jar:5.3.14]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:671) ~[spring-core-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:407) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:388) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:335) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.3.14.jar:5.3.14]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Lcom/ilvan/libraryapi/service/EmailService;
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3061) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2248) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:734) ~[spring-core-5.3.14.jar:5.3.14]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ilvan.libraryapi.service.EmailService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 30 common frames omitted
 
+2023-05-06 15:22:55.310  INFO 9152 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Starting LibraryApiApplication using Java 11.0.17 on LAPTOP-FMMS1NUN with PID 9152 (C:\projetos\library-api\target\classes started by ilvan in C:\projetos\library-api)
+2023-05-06 15:22:55.312  INFO 9152 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : No active profile set, falling back to default profiles: default
+2023-05-06 15:22:55.659  INFO 9152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-06 15:22:55.661  INFO 9152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2023-05-06 15:22:55.783  INFO 9152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-06 15:22:55.784  INFO 9152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:22:55.785  INFO 9152 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-05-06 15:22:55.813  INFO 9152 --- [restartedMain] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:22:55.813  INFO 9152 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 495 ms
+2023-05-06 15:22:55.841  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2023-05-06 15:22:55.844  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2023-05-06 15:22:55.844  INFO 9152 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:382a8a4e-3c30-464c-8c2d-fc30d775ee6d'
+2023-05-06 15:22:55.874  INFO 9152 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-06 15:22:55.881  INFO 9152 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-06 15:22:55.896  INFO 9152 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-06 15:22:55.897  INFO 9152 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:22:55.904  WARN 9152 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'libraryApiApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+2023-05-06 15:22:55.905  INFO 9152 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:22:55.906  INFO 9152 --- [restartedMain] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-05-06 15:22:56.115  WARN 9152 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2023-05-06 15:22:56.116  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2023-05-06 15:22:56.211  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2023-05-06 15:22:56.212  INFO 9152 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:22:56.219  INFO 9152 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
-Negative matches:
------------------
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-06 15:22:56.224 ERROR 9152 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-    None
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'libraryApiApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.8.jar:2.5.8]
+	at com.ilvan.libraryapi.LibraryApiApplication.main(LibraryApiApplication.java:36) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.8.jar:2.5.8]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:739) ~[spring-core-5.3.14.jar:5.3.14]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:671) ~[spring-core-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:407) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:388) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:335) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.3.14.jar:5.3.14]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Lcom/ilvan/libraryapi/service/EmailService;
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3061) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2248) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:734) ~[spring-core-5.3.14.jar:5.3.14]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ilvan.libraryapi.service.EmailService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 30 common frames omitted
 
+2023-05-06 15:22:57.700  INFO 9152 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Starting LibraryApiApplication using Java 11.0.17 on LAPTOP-FMMS1NUN with PID 9152 (C:\projetos\library-api\target\classes started by ilvan in C:\projetos\library-api)
+2023-05-06 15:22:57.701  INFO 9152 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : No active profile set, falling back to default profiles: default
+2023-05-06 15:22:57.933  INFO 9152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-06 15:22:57.935  INFO 9152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2023-05-06 15:22:58.013  INFO 9152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-06 15:22:58.015  INFO 9152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:22:58.016  INFO 9152 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-05-06 15:22:58.043  INFO 9152 --- [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:22:58.044  INFO 9152 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 339 ms
+2023-05-06 15:22:58.067  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2023-05-06 15:22:58.070  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2023-05-06 15:22:58.071  INFO 9152 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:fe5802eb-cb64-47b1-b156-928aca642051'
+2023-05-06 15:22:58.098  INFO 9152 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-06 15:22:58.103  INFO 9152 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-06 15:22:58.115  INFO 9152 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-06 15:22:58.116  INFO 9152 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:22:58.122  WARN 9152 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'libraryApiApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+2023-05-06 15:22:58.123  INFO 9152 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:22:58.125  INFO 9152 --- [restartedMain] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-05-06 15:22:58.332  WARN 9152 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2023-05-06 15:22:58.334  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2023-05-06 15:22:58.441  INFO 9152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-05-06 15:22:58.444  INFO 9152 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-06 15:22:58.471  INFO 9152 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
-Exclusions:
------------
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-06 15:22:58.490 ERROR 9152 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-    None
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'libraryApiApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.8.jar:2.5.8]
+	at com.ilvan.libraryapi.LibraryApiApplication.main(LibraryApiApplication.java:36) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.8.jar:2.5.8]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ilvan.libraryapi.LibraryApiApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:739) ~[spring-core-5.3.14.jar:5.3.14]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:671) ~[spring-core-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:407) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:388) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:335) ~[spring-orm-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116) ~[spring-beans-5.3.14.jar:5.3.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.3.14.jar:5.3.14]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Lcom/ilvan/libraryapi/service/EmailService;
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3061) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2248) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:734) ~[spring-core-5.3.14.jar:5.3.14]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ilvan.libraryapi.service.EmailService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 30 common frames omitted
 
+2023-05-06 15:40:27.727  INFO 15064 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Starting LibraryApiApplication using Java 11.0.17 on LAPTOP-FMMS1NUN with PID 15064 (C:\projetos\library-api\target\classes started by ilvan in C:\projetos\library-api)
+2023-05-06 15:40:27.729  INFO 15064 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : No active profile set, falling back to default profiles: default
+2023-05-06 15:40:27.795  INFO 15064 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-06 15:40:27.796  INFO 15064 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-06 15:40:29.125  INFO 15064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-06 15:40:29.213  INFO 15064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
+2023-05-06 15:40:30.068  INFO 15064 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-06 15:40:30.081  INFO 15064 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:40:30.082  INFO 15064 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-05-06 15:40:30.333  INFO 15064 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:40:30.334  INFO 15064 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2536 ms
+2023-05-06 15:40:30.473  INFO 15064 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-06 15:40:30.663  INFO 15064 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-06 15:40:30.671  INFO 15064 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:735386c2-3496-492a-8826-2f3defdc3799'
+2023-05-06 15:40:30.774  INFO 15064 --- [restartedMain] o.s.b.a.e.web.ServletEndpointRegistrar   : Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+2023-05-06 15:40:30.899  INFO 15064 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-06 15:40:30.955  INFO 15064 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-05-06 15:40:31.097  INFO 15064 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-06 15:40:31.237  INFO 15064 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-06 15:40:31.988  INFO 15064 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-06 15:40:32.004  INFO 15064 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:40:33.080  WARN 15064 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-06 15:40:33.381  INFO 15064 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2023-05-06 15:40:33.688  INFO 15064 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:40:34.124  INFO 15064 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-06 15:40:34.127  INFO 15064 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-05-06 15:40:34.159  INFO 15064 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-05-06 15:40:34.180  INFO 15064 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-05-06 15:40:34.456  INFO 15064 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_1
+2023-05-06 15:40:34.467  INFO 15064 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findUsingGET_1
+2023-05-06 15:40:34.518  INFO 15064 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Started LibraryApiApplication in 7.217 seconds (JVM running for 7.894)
+2023-05-06 15:40:37.378  WARN 15064 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=spring-boot-application, managementUrl=http://LAPTOP-FMMS1NUN:8080/actuator, healthUrl=http://LAPTOP-FMMS1NUN:8080/actuator/health, serviceUrl=http://LAPTOP-FMMS1NUN:8080/) at spring-boot-admin ([http://localhost:9090//instances]): 404 : "{"timestamp":"2023-05-06T18:40:37.329+00:00","status":404,"error":"Not Found","path":"/instances"}". Further attempts are logged on DEBUG level
+2023-05-06 15:41:47.032  INFO 15064 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:41:47.033  INFO 15064 --- [Thread-4] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-05-06 15:41:47.259  WARN 15064 --- [Thread-4] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2023-05-06 15:41:47.261  INFO 15064 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-06 15:41:47.265  INFO 15064 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-06 15:41:47.368  INFO 15064 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Starting LibraryApiApplication using Java 11.0.17 on LAPTOP-FMMS1NUN with PID 15064 (C:\projetos\library-api\target\classes started by ilvan in C:\projetos\library-api)
+2023-05-06 15:41:47.369  INFO 15064 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : No active profile set, falling back to default profiles: default
+2023-05-06 15:41:47.878  INFO 15064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-06 15:41:47.902  INFO 15064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 2 JPA repository interfaces.
+2023-05-06 15:41:48.056  INFO 15064 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-06 15:41:48.057  INFO 15064 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:41:48.058  INFO 15064 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-05-06 15:41:48.097  INFO 15064 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:41:48.098  INFO 15064 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 724 ms
+2023-05-06 15:41:48.147  INFO 15064 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-05-06 15:41:48.151  INFO 15064 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-05-06 15:41:48.151  INFO 15064 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:b3e9af2e-e105-4528-bfae-ed639b29bf35'
+2023-05-06 15:41:48.189  INFO 15064 --- [restartedMain] o.s.b.a.e.web.ServletEndpointRegistrar   : Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+2023-05-06 15:41:48.229  INFO 15064 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-06 15:41:48.239  INFO 15064 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-06 15:41:48.320  INFO 15064 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-06 15:41:48.322  INFO 15064 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:41:48.508  WARN 15064 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-06 15:41:48.599  INFO 15064 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2023-05-06 15:41:48.675  INFO 15064 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:41:48.786  INFO 15064 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-06 15:41:48.788  INFO 15064 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-05-06 15:41:48.791  INFO 15064 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-05-06 15:41:48.802  INFO 15064 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-05-06 15:41:48.906  INFO 15064 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_1
+2023-05-06 15:41:48.912  INFO 15064 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findUsingGET_1
+2023-05-06 15:41:48.929  INFO 15064 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Started LibraryApiApplication in 1.606 seconds (JVM running for 82.305)
+2023-05-06 15:41:50.333  INFO 15064 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:41:50.334  INFO 15064 --- [Thread-7] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-05-06 15:41:50.553  WARN 15064 --- [Thread-7] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2023-05-06 15:41:50.557  INFO 15064 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-05-06 15:41:50.564  INFO 15064 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-05-06 15:41:50.663  INFO 15064 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Starting LibraryApiApplication using Java 11.0.17 on LAPTOP-FMMS1NUN with PID 15064 (C:\projetos\library-api\target\classes started by ilvan in C:\projetos\library-api)
+2023-05-06 15:41:50.664  INFO 15064 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : No active profile set, falling back to default profiles: default
+2023-05-06 15:41:51.114  INFO 15064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-06 15:41:51.136  INFO 15064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+2023-05-06 15:41:51.242  INFO 15064 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-06 15:41:51.243  INFO 15064 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 15:41:51.244  INFO 15064 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-05-06 15:41:51.271  INFO 15064 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 15:41:51.272  INFO 15064 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 603 ms
+2023-05-06 15:41:51.310 ERROR 15064 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-Unconditional classes:
-----------------------
+java.lang.IllegalStateException: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@21f706b1 has been closed already
+	at org.springframework.context.support.AbstractApplicationContext.assertBeanFactoryActive(AbstractApplicationContext.java:1138) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1153) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.getTargetBean(ApplicationListenerMethodAdapter.java:371) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.doInvoke(ApplicationListenerMethodAdapter.java:336) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.processEvent(ApplicationListenerMethodAdapter.java:229) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.onApplicationEvent(ApplicationListenerMethodAdapter.java:166) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:421) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:378) ~[spring-context-5.3.14.jar:5.3.14]
+	at org.springframework.boot.context.event.EventPublishingRunListener.running(EventPublishingRunListener.java:111) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$running$6(SpringApplicationRunListeners.java:79) ~[spring-boot-2.5.8.jar:2.5.8]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplicationRunListeners.running(SpringApplicationRunListeners.java:79) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:353) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-2.5.8.jar:2.5.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.8.jar:2.5.8]
+	at com.ilvan.libraryapi.LibraryApiApplication.main(LibraryApiApplication.java:36) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.8.jar:2.5.8]
 
-    None
-
-
-
-2023-05-05 17:54:57.853  INFO 14640 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-05-05 17:54:57.854  INFO 14640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-05-05 17:54:57.856  INFO 14640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-05-05 17:55:34.354  INFO 14640 --- [Thread-142] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-05-05 17:55:34.354  INFO 14640 --- [Thread-142] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2023-05-05 17:55:34.567  WARN 14640 --- [Thread-142] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-2023-05-05 17:55:34.570  INFO 14640 --- [Thread-142] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Shutdown initiated...
-2023-05-05 17:55:34.572  INFO 14640 --- [Thread-142] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Shutdown completed.
-2023-05-05 17:55:49.766  INFO 14640 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Starting LibraryApiApplication using Java 11.0.17 on LAPTOP-FMMS1NUN with PID 14640 (C:\projetos\library-api\target\classes started by ilvan in C:\projetos\library-api)
-2023-05-05 17:55:49.766  INFO 14640 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : No active profile set, falling back to default profiles: default
-2023-05-05 17:55:50.005  INFO 14640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-05-05 17:55:50.019  INFO 14640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 2 JPA repository interfaces.
-2023-05-05 17:55:50.076  INFO 14640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-05-05 17:55:50.077  INFO 14640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-05-05 17:55:50.078  INFO 14640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2023-05-05 17:55:50.102  INFO 14640 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2023-05-05 17:55:50.102  INFO 14640 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 334 ms
-2023-05-05 17:55:50.121  INFO 14640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Starting...
-2023-05-05 17:55:50.124  INFO 14640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Start completed.
-2023-05-05 17:55:50.125  INFO 14640 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:b7afc500-288e-4f55-9929-860dc357f598'
-2023-05-05 17:55:50.154  INFO 14640 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-05-05 17:55:50.159  INFO 14640 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-05-05 17:55:50.185  INFO 14640 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-05-05 17:55:50.186  INFO 14640 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-05-05 17:55:50.293  WARN 14640 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-05 17:55:50.331  INFO 14640 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-05-05 17:55:50.360  INFO 14640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-05-05 17:55:50.394  INFO 14640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-05-05 17:55:50.395  INFO 14640 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2023-05-05 17:55:50.396  INFO 14640 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-05-05 17:55:50.399  INFO 14640 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2023-05-05 17:55:50.419  INFO 14640 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_1
-2023-05-05 17:55:50.424  INFO 14640 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findUsingGET_1
-2023-05-05 17:55:50.430  INFO 14640 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Started LibraryApiApplication in 0.686 seconds (JVM running for 1468.046)
-2023-05-05 17:55:51.260  INFO 14640 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-05-05 17:55:51.263  INFO 14640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-05-05 17:55:51.267  INFO 14640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-05-05 17:55:52.814  INFO 14640 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
-
-
-==========================
-CONDITION EVALUATION DELTA
-==========================
-
-
-Positive matches:
------------------
-
-   LogFileWebEndpointAutoConfiguration#logFileWebEndpoint matched:
-      - Log File found logging.file.name appfile.log (LogFileWebEndpointAutoConfiguration.LogFileCondition)
-      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.logging.LogFileWebEndpoint; SearchStrategy: all) did not find any beans (OnBeanCondition)
-
-
-Negative matches:
------------------
-
-    None
-
-
-Exclusions:
------------
-
-    None
-
-
-Unconditional classes:
-----------------------
-
-    None
-
-
-
-2023-05-05 17:57:03.848  INFO 17836 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Starting LibraryApiApplication using Java 11.0.17 on LAPTOP-FMMS1NUN with PID 17836 (C:\projetos\library-api\target\classes started by ilvan in C:\projetos\library-api)
-2023-05-05 17:57:03.850  INFO 17836 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : No active profile set, falling back to default profiles: default
-2023-05-05 17:57:03.925  INFO 17836 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-05-05 17:57:03.926  INFO 17836 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-05-05 17:57:05.626  INFO 17836 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-05-05 17:57:05.725  INFO 17836 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 2 JPA repository interfaces.
-2023-05-05 17:57:07.045  INFO 17836 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-05-05 17:57:07.068  INFO 17836 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-05-05 17:57:07.069  INFO 17836 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2023-05-05 17:57:07.387  INFO 17836 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-05-05 17:57:07.388  INFO 17836 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3460 ms
-2023-05-05 17:57:07.587  INFO 17836 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-05 17:57:07.867  INFO 17836 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-05 17:57:07.884  INFO 17836 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:ce5e6350-8c85-482a-a3cd-f473929b44b5'
-2023-05-05 17:57:08.163  INFO 17836 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-05-05 17:57:08.273  INFO 17836 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
-2023-05-05 17:57:08.486  INFO 17836 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-05-05 17:57:08.682  INFO 17836 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-05-05 17:57:09.723  INFO 17836 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-05-05 17:57:09.742  INFO 17836 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-05-05 17:57:10.819  WARN 17836 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-05 17:57:11.154  INFO 17836 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-05-05 17:57:11.395  INFO 17836 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-05-05 17:57:11.719  INFO 17836 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-05-05 17:57:11.723  INFO 17836 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2023-05-05 17:57:11.766  INFO 17836 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-05-05 17:57:11.789  INFO 17836 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2023-05-05 17:57:12.113  INFO 17836 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_1
-2023-05-05 17:57:12.123  INFO 17836 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findUsingGET_1
-2023-05-05 17:57:12.199  INFO 17836 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Started LibraryApiApplication in 8.903 seconds (JVM running for 9.628)
-2023-05-05 17:57:20.710  INFO 17836 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-05-05 17:57:20.712  INFO 17836 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-05-05 17:57:20.715  INFO 17836 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-06 15:41:51.322  INFO 15064 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-05-06 15:41:51.326  INFO 15064 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-05-06 15:41:51.326  INFO 15064 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:ea194a03-2133-4896-befd-956b097a7625'
+2023-05-06 15:41:51.352  INFO 15064 --- [restartedMain] o.s.b.a.e.web.ServletEndpointRegistrar   : Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+2023-05-06 15:41:51.377  INFO 15064 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-06 15:41:51.384  INFO 15064 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-06 15:41:51.445  INFO 15064 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-06 15:41:51.446  INFO 15064 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-06 15:41:51.647  WARN 15064 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-06 15:41:51.714  INFO 15064 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2023-05-06 15:41:51.771  INFO 15064 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-06 15:41:51.831  INFO 15064 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-06 15:41:51.832  INFO 15064 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-05-06 15:41:51.834  INFO 15064 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-05-06 15:41:51.839  INFO 15064 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-05-06 15:41:51.886  INFO 15064 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_1
+2023-05-06 15:41:51.893  INFO 15064 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findUsingGET_1
+2023-05-06 15:41:51.908  INFO 15064 --- [restartedMain] c.i.libraryapi.LibraryApiApplication     : Started LibraryApiApplication in 1.279 seconds (JVM running for 85.284)
+2023-05-06 15:41:54.378  INFO 15064 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-06 15:41:54.405  WARN 15064 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=spring-boot-application, managementUrl=http://LAPTOP-FMMS1NUN:8080/actuator, healthUrl=http://LAPTOP-FMMS1NUN:8080/actuator/health, serviceUrl=http://LAPTOP-FMMS1NUN:8080/) at spring-boot-admin ([http://localhost:9090/instances]): 404 : "{"timestamp":"2023-05-06T18:41:54.403+00:00","status":404,"error":"Not Found","path":"/instances"}". Further attempts are logged on DEBUG level
+2023-05-06 15:46:14.868  INFO 15064 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as b0a57c704d94
+2023-05-06 15:46:14.940  INFO 15064 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 15:46:14.941  INFO 15064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 15:46:14.944  INFO 15064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-06 15:50:11.225  INFO 15064 --- [http-nio-8080-exec-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : jolokia-actuator-endpoint: No access restrictor found, access to any MBean is allowed
+2023-05-06 15:51:14.420  WARN 15064 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=spring-boot-application, managementUrl=http://LAPTOP-FMMS1NUN:8080/actuator, healthUrl=http://LAPTOP-FMMS1NUN:8080/actuator/health, serviceUrl=http://LAPTOP-FMMS1NUN:8080/) at spring-boot-admin ([http://localhost:9090/instances]): I/O error on POST request for "http://localhost:9090/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
